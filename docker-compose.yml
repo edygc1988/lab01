@@ -1,0 +1,14 @@
+version: '3.8'  # Specify the Docker Compose version
+
+services:
+  main:
+    build: ./main  # Path to the directory containing the main application Dockerfile
+    ports:
+      - "5000:5000"  # Expose port 5000 of the container to port 5000 on the host
+    depends_on:
+      - sidecar  # Ensure sidecar starts before the main application
+
+  sidecar:
+    build: ./sidecar  # Path to the directory containing the Sidecar Dockerfile
+    ports:
+      - "8080:8080"  # Expose port 8080 of the container to port 8080 on the host

@@ -1,0 +1,2 @@
+requests  # For sending HTTP requests in the main application (if using requests library)
+Flask     # For running the Sidecar as a web service (if using Flask)
